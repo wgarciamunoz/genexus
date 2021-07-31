@@ -7,7 +7,7 @@
     <title>Document</title>
     <script>
         window.onload = function () {
-            var alumno = '{ "nombre":"Geovanny", "apellido":"Garcìa", "clave":"007", "ciudad": "Cùcuta"   }';
+            
             var agente = JSON.parse(alumno);
             document.getElementById("salida").innerHTML = "<p>Bienvenido " + agente.nombre + ", " + agente.apellido + "<br>";
         }            
