@@ -5,15 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+        window.onload = function () {
+            var alumno = '{ "nombre":"Geovanny", "apellido":"Garcìa", "clave":"007", "ciudad": "Cùcuta"   }';
+            var agente = JSON.parse(alumno);
+            document.getElementById("salida").innerHTML = "<p>Bienvenido " + agente.nombre + ", " + agente.apellido + "<br>";
+        }            
+    </script> 
 </head>
 <body>
-<script>
-    var persona = {
-        nombre: 'Geovanny',
-        apellido: 'García',
-        edad: 42
-    }
-    
-</script>    
+<div id="salida">
+
+</div>
+
 </body>
 </html>
