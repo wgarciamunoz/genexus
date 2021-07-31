@@ -1,22 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Json</title>
     <script>
         window.onload = function () {
-            
-            var agente = JSON.parse(alumno);
-            document.getElementById("salida").innerHTML = "<p>Bienvenido " + agente.nombre + ", " + agente.apellido + "<br>";
-        }            
-    </script> 
-</head>
-<body>
-<div id="salida">
+            var xmlhttp = new XMLHttpRequest();
+            var url = "datos.json";
 
-</div>
+            xmlhttp.onreadystatechange = function () {
+
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    var alumnos = JSON.parse(xmlhttp.responseText);
+                    despliegaAlumnos(alumnos);
+
+                }
+            }
+
+            xmlhttp.open("GET", url, true);
+            xmlhttp.send();
+
+            function despliegaAlumnos(arreglo) {
+                var cadena ="";
+                var i;
+                for (let i = 0; i < arreglo.length; i++) {
+                    cadena += arreglo[i].nombre + " Calificacion " + arreglo[i].calificacion + "<br>";
+                     
+                }
+
+                document.getElementById("salida").innerHTML = cadena;
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="salida">
+
+    </div>
 
 </body>
+
 </html>
