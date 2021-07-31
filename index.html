@@ -1,13 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="js/funciones.js"></script>
-    <title>Titulo12</title>
+    <title>App</title>
+    <script>
+        function cargaArchivo() {
+            var xmlhttp;
+            if (window.XMLHttpRequest) {
+                xmlhttp = new XMLHttpRequest();
+            } else {
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            //sincrono con false
+            //asincrono true
+            xmlhttp.open("GET", "ajax.txt", true);
+            xmlhttp.send();
+            
+            xmlhttp.onreadystatechange=function () {
+                if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                    document.getElementById("salida").innerHTML = xmlhttp.responseText;        
+                }   
+                
+            }
+            
+
+        }
+    </script>
 </head>
+
 <body>
-    <h1>hola</h1>
+<div id="salida">
+    <h2>Pulsa el botón</h2>
+    <button onclick="cargaArchivo()">Cargar Archivo</button>
+
+</div>
 </body>
+
 </html>
