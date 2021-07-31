@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciclo For Each</title>
+    <script>
+    /*
+        array.forEach(function(valor,index,arreglo), thisValue);
+        valor: requerido. Valor del nodel del arreglo leìdo
+        index. opcional. El ìdice del arreglo leìdo
+        arreglo opcional. el arreglo leìdo
+        thisValus opcional
+
+    */
+   function muestraArreglo(elemento, index) {
+    console.log(index); 
+       if(this == elemento) {
+        console.log(index, elemento); 
+       }
+   }
+    [10,20,30,40,50].forEach(muestraArreglo, 2);
+
+    </script>
+</head>
+<body>
+    
+    
+</body>
+</html>
