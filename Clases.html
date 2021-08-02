@@ -8,22 +8,25 @@
 
     <script>
         class Gato{
+            constructor(args={}){
+                ({pelo: this.pelo="negro", nombre:this.nombre="minino"}=args);
+            }
+
+            toString(){
+                return this.nombre + " tiene el pelo color " + this.pelo ;
+            }
+
 
         }
 
-        class Perro{
 
-        }
+        let benito = new Gato({pelo:"Azul", nombre:"Benito"});
+        let cucho = new Gato({});
 
+        console.log(benito.toString()) ;
+        console.log(cucho.toString()) ;
+        //console.log(benito instanceof Gato);
 
-
-        var benito = new Gato;
-        var cucho = new Perro();
-        console.log(typeof benito) ;
-        console.log( typeof cucho);
-
-        console.log(benito instanceof Gato);
-        console.log(cucho instanceof Perro);
     </script>
 </head>
 <body>
