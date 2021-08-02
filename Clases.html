@@ -7,25 +7,77 @@
     <title>Clases</title>
 
     <script>
-        class Gato{
+        class Mascota{
+            
             constructor(args={}){
-                ({pelo: this.pelo="negro", nombre:this.nombre="minino"}=args);
+                ({
+                    nombre: this._nombre="Sin nombre", 
+                    genero:this._genero="Sin genero",
+                    especie:this._especie="Sin especie"
+                }=args);
+            }
+            
+            /*
+            constructor(nombre="minino", pelo="negro"){
+                this._nombre = nombre;
+                this._pelo = pelo;
+            }
+            */
+            //setters
+            set nombre(valor){
+                this._nombre = valor;
+            }
+
+            set genero(valor){
+                this._genero = valor;
+            }
+
+            set especie(valor){
+                this._especie = valor;
+            }
+            
+            // getters
+            get nombre(){
+                return this._nombre;
+            }
+
+            get genero(){
+                return this._genero;
+            }
+            
+            get especie(){
+                return this._especie;
+            }
+
+
+            //Mètodos Estàticos
+
+            static dice(){
+                return "los gatos dicen miau";
             }
 
             toString(){
-                return this.nombre + " tiene el pelo color " + this.pelo ;
+                return "Mi nombre es " + this._nombre + ", soy un " + this._especie;
             }
 
 
         }
 
+        class Gato extends Mascota{
+                constructor(params={}){
+                    super({especie:"Gato"});
+                }
+        }
 
-        let benito = new Gato({pelo:"Azul", nombre:"Benito"});
-        let cucho = new Gato({});
 
-        console.log(benito.toString()) ;
-        console.log(cucho.toString()) ;
-        //console.log(benito instanceof Gato);
+        let benito = new Gato();
+        
+
+        console.log(benito.toString()) ;      
+
+        benito.nombre = "Benito";
+        benito.genero = "Macho";
+        console.log(benito.toString()) ;      
 
     </script>
 </head>

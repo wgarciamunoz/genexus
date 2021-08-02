@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            $("#poseidon").click(function() {
+                $(".poseidon").css("border", "10px");
+                $(".poseidon").css("border-style", "solid");
+                $(".poseidon").css("border-color", "blue");
+            });
+            $("#zeus").click(function() {
+                $(".zeus").css("border", "10px");
+                $(".zeus").css("border-style", "solid");
+                $(".zeus").css("border-color", "red");
+            });
+            $("#afrodita").click(function() {
+                $(".afrodita").css("border", "10px");
+                $(".afrodita").css("border-style", "solid");
+                $(".afrodita").css("border-color", "orange");
+            });
+        });
+    </script>
+    <title>Selectores</title>
+</head>
+<body>
+    <input type="button" id="poseidon" value="Dios de los mares">
+    <input type="button" id="zeus" value="Dios de los dioses">
+    <input type="button" id="afrodita" value="Dios del amor">
+    <br>
+    <img src="poseidon.jpg" class="poseidon" srcset="">
+    <img src="zeus.jpg" class="zeus" srcset="">
+    <img src="afrodita.jpg" class="afrodita" srcset="">
+</body>
+</html>
